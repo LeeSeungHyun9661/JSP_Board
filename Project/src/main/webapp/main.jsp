@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!--Script문장을 실행 할 수 있도록 PrintWriter 라이브러리를 불러온다. -->
+<%@ page import="java.io.PrintWriter"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<!--부트스트랩은 어떤device로 접속하더라도 해상도에 맞게 알아서 설정되는 탬플릿이다. -->
-<meta name="viewport" content="width=device-width" , inital-scale="1">
-<!--스타일시트를 참조, 주소는 css안에 부트스트랩.css-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width" , initial-scale="1">
+<!-- 반응형 웹에 사용하는 메타태그 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <title>JSP 게시판 웹 사이트</title>
 </head>
 <body>
-<!-- 네비게이션 구현 네비게이션이라는 것은 하나의 웹사이트의 전반적인 구성을 보여주는 역할 -->
 	<%
 	//로그인이 된 사람들은 로그인정보를 담을 수 있도록한다.
 	String id = null;
@@ -53,49 +53,11 @@
 				<%
 				}
 				%>
-	          </ul>				
 	        </li>
 	      </ul>
 	    </div>
 	  </div>
 	</nav>
-	<!-- 하나의 컨테이너처럼 감싸주는 역할 -->
-	
-	<div class="container">	
-		<h2>회원가입 화면</h2>
-		<form action="joinAction.jsp" method="post">
-			<div class="mb-3">
-				<label class="form-label" for="id">아이디</label> 
-				<input class="form-control" type="text" name="id" id="id"  maxlength="20"/>
-			</div>
-			<div class="mb-3">
-				<label class="form-label" for="pwd">비밀번호</label> 
-				<input class="form-control" type="password" name="password" id="passwrod" maxlength="20"/>
-			</div>
-			<div class="mb-3">
-				<label class="form-label" for="name">이름</label> 
-				<input class="form-control" type="text" name="name" id="name" maxlength="20"/>
-			</div>
-			
-			<div class="mb-3">
-				<label class="form-label" for="name">이메일</label> 
-				<input class="form-control" type="text" name="email" id="email" maxlength="50"/>
-			</div>
-			<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-primary active">
-					<input type="radio" name="gender" autocomplete="off" value="M" checked>남자 
-				</label>
-				<label class="btn btn-primary">
-					<input type="radio" name="gender" autocomplete="off" value="F" checked>여자 
-				</label>
-			</div>
-			
-			<button class="btn btn-outline-primary btn-sm" type="submit">회원가입</button>
-		</form>
-	</div>
-	<!-- 애니메이션을 담당하게 될 자바스크립트 참조 -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<!--js폴더 안에있는 bootstrap.js를 사용선언  -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

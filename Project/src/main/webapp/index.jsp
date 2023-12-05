@@ -11,7 +11,7 @@
 	<!-- 1.body tag 내에 script tag 생성 -->
 	<script>
 			//웹페이지에 접속 시에 강제로 로그인 화면으로 이동 시켜주는 소스 작성
-			location.href = 'login.jsp';
+			location.href = 'main.jsp';
 	</script>
 </body>
 </html>

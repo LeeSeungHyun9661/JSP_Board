@@ -10,6 +10,15 @@
 <title>JSP 게시판</title>
 </head>
 <body>
+	<%
+	//로그인이 된 사람들은 로그인정보를 담을 수 있도록한다.
+	String id = null;
+	//만약에 현재 세션이 존재한다면
+	if (session.getAttribute("id") != null) {
+		//그 아이디값을 받아서 userID인스턴스로 관리할 수 있도록 한다.
+		id = (String) session.getAttribute("id");
+	}
+	%>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 	  <div class="container-fluid">
 	    <a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
@@ -29,8 +38,20 @@
 	            접속하기
 	          </a>
 	          <ul class="dropdown-menu">
+	          	<%
+				if (id == null) {
+				%>
 	            <li><a class="dropdown-item" href="login.jsp">로그인</a></li>
 	            <li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
+	            <%
+				// 로그인이 되어있는 사람만 볼수 있는 화면
+				} else {
+				%>
+				<li><a class="dropdown-item" href="logoutAction.jsp">로그아웃</a></li>
+				<%
+				}
+				%>
+	          </ul>				
 	        </li>
 	      </ul>
 	    </div>
